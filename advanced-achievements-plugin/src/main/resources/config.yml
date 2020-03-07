@@ -199,6 +199,9 @@ AllAchievementsReceivedRewards:
 # Title shown on the root advancement.
 RootAdvancementTitle: Advanced Achievements
 
+# Description shown on the root advancement.
+RootAdvancementDescription: ""
+
 # Background shown on the Advanced Achievements advancement tab.
 # Must be a resource location to any image in a resource pack.
 AdvancementsBackground: "minecraft:textures/item/book.png"

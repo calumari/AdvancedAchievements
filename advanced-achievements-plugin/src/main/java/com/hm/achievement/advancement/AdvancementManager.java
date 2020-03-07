@@ -70,6 +70,7 @@ public class AdvancementManager implements Reloadable {
 	private boolean configRegisterAdvancementDescriptions;
 	private boolean configHideAdvancements;
 	private String configRootAdvancementTitle;
+	private String configRootAdvancementDescription;
 	private String configBackgroundTexture;
 	private int generatedAdvancements;
 
@@ -94,6 +95,7 @@ public class AdvancementManager implements Reloadable {
 		configRegisterAdvancementDescriptions = mainConfig.getBoolean("RegisterAdvancementDescriptions", true);
 		configHideAdvancements = mainConfig.getBoolean("HideAdvancements");
 		configRootAdvancementTitle = mainConfig.getString("RootAdvancementTitle", "Advanced Achievements");
+		configRootAdvancementDescription = mainConfig.getString("configRootAdvancementDescription", "");
 		configBackgroundTexture = parseBackgroundTexture();
 	}
 
@@ -154,9 +156,9 @@ public class AdvancementManager implements Reloadable {
 				AchievementAdvancementBuilder builder = new AchievementAdvancementBuilder()
 						.iconItem(MINECRAFT_BOOK_KEY)
 						.title(configRootAdvancementTitle)
-						.description("")
+						.description(configRootAdvancementDescription)
 						.background(configBackgroundTexture)
-						.type(AdvancementType.GOAL);
+						.type(AdvancementType.TASK);
 
 				AchievementAdvancement aa = (serverVersion == 12 ? builder.iconData(Integer.toString(0)) : builder).build();
 				unsafeValues.loadAdvancement(namespacedKey, AdvancementJsonHelper.toJson(aa));

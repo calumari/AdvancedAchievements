@@ -205,6 +205,8 @@ public class FileUpdater {
 		// Added in 5.14.0:
 		updateSetting(config, "ReceiverChatMessages", true, "Display chat messages when a player receives an achievement.");
 
+		updateSetting(config, "RootAdvancementDescription", "", "Description shown on the root advancement.");
+
 		if (updatePerformed) {
 			// Changes in the configuration: save and do a fresh load.
 			try {
